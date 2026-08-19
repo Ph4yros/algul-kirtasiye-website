@@ -1,69 +1,187 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
+const categories = [
+  { name: "Kırtasiye", icon: "✏️" },
+  { name: "Okul", icon: "🎒" },
+  { name: "Ofis", icon: "🖊️" },
+  { name: "Defter & Ajanda", icon: "📓" },
+  { name: "Kitap", icon: "📚" },
+  { name: "Sanat & Hobi", icon: "🎨" },
+  { name: "Oyun & Oyuncak", icon: "🎲" },
+  { name: "Aksesuarlar", icon: "🎧" },
+];
+
+const featuredProducts = [
+  {
+    name: "Premium Spiralli Defter",
+    category: "Defter & Ajanda",
+    price: "149,90 TL",
+    oldPrice: "179,90 TL",
+    image: "/images/products/premium-spiralli-defter.jpg",
+  },
+  {
+    name: "Faber-Castell Grip Kalem",
+    category: "Kırtasiye",
+    price: "89,90 TL",
+    oldPrice: "",
+    image: "/images/products/faber-castell-grip-kalem.jpg",
+  },
+  {
+    name: "Pastel Fosforlu Kalem Seti",
+    category: "Kırtasiye",
+    price: "119,90 TL",
+    oldPrice: "139,90 TL",
+    image: "/images/products/pastel-fosforlu-kalem-seti.jpg",
+  },
+  {
+    name: "12'li Profesyonel Boya Seti",
+    category: "Sanat & Hobi",
+    price: "229,90 TL",
+    oldPrice: "",
+    image: "/images/products/profesyonel-boya-seti.jpg",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      {/* Header */}
+     
+
+      {/* Hero */}
+      <section className="hero">
+        <div className="container hero-content">
+          <div className="hero-text">
+            <span className="eyebrow">ALGÜL KIRTASİYE</span>
+
+            <h1>
+              Okul, ofis ve
+              <br />
+              <span>yaratıcılık</span> için
+              <br />
+              ihtiyacın olan her şey.
+            </h1>
+
+            <p>
+              Kaliteli kırtasiye ürünlerini keşfedin. Okuldan ofise,
+              sanattan hobiye ihtiyacınız olan her şey burada.
+            </p>
+
+            <div className="hero-buttons">
+              <a href="/products" className="primary-button">
+                Ürünleri Keşfet
+              </a>
+
+              <a href="/categories" className="secondary-button">
+                Kategorilere Göz At
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-visual">
+            <div className="hero-card">
+              <span>✏️</span>
+              <strong>Yaratıcılığını</strong>
+              <small>Keşfet.</small>
+            </div>
+
+            <div className="floating-card card-one">
+              📓
+            </div>
+
+            <div className="floating-card card-two">
+              🎨
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+      </section>
+
+      {/* Categories */}
+      <section className="section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">KEŞFET</span>
+              <h2>Kategoriler</h2>
+            </div>
+
+            <a href="/categories">Tümünü Gör →</a>
+          </div>
+
+          <div className="category-grid">
+            {categories.map((category) => (
+              <a href="/categories" className="category-card" key={category.name}>
+                <span className="category-icon">{category.icon}</span>
+                <span>{category.name}</span>
+                <small>Keşfet →</small>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured products */}
+      <section className="section products-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">ÖNE ÇIKANLAR</span>
+              <h2>Popüler Ürünler</h2>
+            </div>
+
+            <a href="/products">Tüm ürünler →</a>
+          </div>
+
+          <div className="product-grid">
+            {featuredProducts.map((product) => (
+              <article className="product-card" key={product.name}>
+              <div className="product-image">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={250}
+                  height={250}
+                />
+              </div>
+
+                <div className="product-info">
+                  <small>{product.category}</small>
+                  <h3>{product.name}</h3>
+
+                  <div className="price">
+                    <strong>{product.price}</strong>
+                    {product.oldPrice && <del>{product.oldPrice}</del>}
+                  </div>
+
+                  <button>Sepete Ekle</button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Promo */}
+      <section className="promo-section">
+        <div className="container promo">
+          <div>
+            <span className="eyebrow">ALGÜL KIRTASİYE</span>
+            <h2>İhtiyacınız olan her şey, tek yerde.</h2>
+            <p>
+              Günlük kırtasiye ihtiyaçlarından okul ve ofis ürünlerine kadar
+              geniş ürün yelpazemizi keşfedin.
+            </p>
+          </div>
+
+          <a href="/products" className="primary-button">
+            Alışverişe Başla
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+    
+    </main>
   );
 }
